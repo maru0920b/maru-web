@@ -1,0 +1,271 @@
+/* -------------------- Resetting margins, paddings, and borders -------------------- */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* -------------------- Typography -------------------- */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+
+html {
+  font-size: 62.5% !important;
+  /* Must -> 10px , 1em , 1rem */
+}
+
+body {
+  font-family: 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans TC', -apple-system,
+    BlinkMacSystemFont, 'Helvetica Neue', 'Yu Gothic', YuGothic, Verdana, Meiryo,
+    'M+ 1p', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+/* -------------------- Attributes & states -------------------- */
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button,
+button:focus {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  border-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  -webkit-margin-before: 0.5em;
+  margin-block-start: 0.5em;
+  -webkit-margin-after: 0.5em;
+  margin-block-end: 0.5em;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  -webkit-margin-end: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+
+/* ==================== color system ==================== */
+
+:root {
+  --primary: #f9546e;
+  --secondary: #ff6b81;
+  --black: #000000;
+  --white: #ffffff;
+  --title: #0e1133;
+  --text: #303030;
+  --bg: #fffcfc;
+  --border: #cbcaca;
+  --line: #c2cbdf;
+  --tag: #6c7896;
+}
+
+/* -------------------- Utils -------------------- */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.none {
+  display: none;
+}
+
+.about-us-page {
+  background-color: var(--white);
+}
+
+.sns {
+  position: absolute;
+  left: -42px;
+  top: 48%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.sns-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.1em;
+}
+
+.sns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sns-list-item {
+  width: 24px;
+  height: 24px;
+}
+
+.sns-list-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sns-list-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.sns-list-item img:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .sns {
+    display: none;
+  }
+}
