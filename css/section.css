@@ -782,10 +782,6 @@
     padding: 16px;
   }
 
-  .creators__content-card-item:nth-child(1n) {
-    border-right: none;
-  }
-
   .creators__content-card-item-name {
     max-width: 300px;
     margin-top: 8px;
